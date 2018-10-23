@@ -285,12 +285,13 @@ ul#nav li.current a { color: #F06000; }
    font: 15px/24px 'opensans-regular', sans-serif;
    font-weight: bold;
    margin-top: 6px;
+   color: #313131;
 }
 #resume .project-margin {
    margin-left: 20px;
 }
 #resume p .project-info {
-  
+
 
 }
 
