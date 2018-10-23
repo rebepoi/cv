@@ -51,7 +51,8 @@ header .banner {
    display: inline-block;
    vertical-align: middle;
    margin: 0 auto;
-   width: 85%;
+   width: 95%;
+   background-color: rgba(0, 0, 0, 0.6);
    padding-bottom: 30px;s
    text-align: center;
 }
