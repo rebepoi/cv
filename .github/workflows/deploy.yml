@@ -14,5 +14,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /var/www/reino.ml/html
+          cd /var/www/${{ secrets.HOST }}/html
           git pull
