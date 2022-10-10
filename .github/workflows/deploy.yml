@@ -15,4 +15,4 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /var/www/${{ secrets.HOST }}/html
-          git pull
+          git pull origin master
