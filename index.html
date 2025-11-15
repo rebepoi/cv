@@ -1,644 +1,404 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
+<html lang="fi">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rebepoi Oy – Platform engineer, DevOps, streamaaja & omavaraisuus</title>
 
-  <!--- Basic Page Needs
-   ================================================== -->
-  <meta charset="utf-8">
-  <title>CV - Reino Pesonen</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Reino Pesonen – platform engineer, DevOps-konsultti, sovelluskehittäjä ja pelistreamaaja. Omavaraisuus- ja kanan lopetuskurssit, Twitch- ja YouTube-sisältöä sekä perhearkea Rebepoi Oy:n kautta." />
+  <meta name="color-scheme" content="dark light" />
 
-  <!-- Mobile Specific Metas
-   ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Oma CSS (pieni, Tailwind-hoitaa suurimman osan) -->
+  <link rel="stylesheet" href="styles.css" />
 
-  <!-- CSS
-    ================================================== -->
-  <link rel="stylesheet" href="css/default.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/media-queries.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
+  <!-- Tailwind-konfiguraatio ennen CDN-skriptiä -->
+  <script>
+    tailwind = {
+      config: {
+        theme: {
+          extend: {
+            colors: {
+              brand: '#0f172a',   // tumma sininen taustaväri
+              accent: '#22c55e',  // vihreä korostus
+              accent2: '#eab308', // lämmin keltainen korostus
+            }
+          }
+        }
+      }
+    };
+  </script>
 
-  <!-- Script
-   ================================================== -->
-  <script src="js/modernizr.js"></script>
-
-  <!-- Favicons
-	================================================== -->
-  <link rel="shortcut icon" href="favicon.png">
-
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-brand text-slate-50 antialiased">
+  <!-- Näppäimistökäyttäjille: ohituslinkki -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 rounded-lg">
+    Siirry suoraan sisältöön
+  </a>
 
-<body>
-
-  <!-- Header
-   ================================================== -->
-  <header id="home">
-
-    <nav id="nav-wrap">
-
-      <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Näytä navigointi</a>
-      <a class="mobile-btn" href="#" title="Hide navigation">Piilota navigointi</a>
-
-      <ul id="nav" class="nav">
-        <li class="current"><a class="smoothscroll" href="#home">Alkuun</a></li>
-        <li><a class="smoothscroll" href="#about">Minä</a></li>
-        <li><a class="smoothscroll" href="#resume">Ansioluettelo</a></li>
-        <!--<li><a class="smoothscroll" href="#portfolio">Työt</a></li>-->
+  <!-- YLÄNAVIGAATIO -->
+  <header class="sticky top-0 z-40 bg-brand/90 backdrop-blur border-b border-slate-800">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3" aria-label="Päävalikko">
+      <a href="#etusivu" class="flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-brand font-bold">R</span>
+        <span class="font-semibold tracking-tight">Rebepoi Oy</span>
+      </a>
+      <ul class="hidden sm:flex gap-6 text-sm font-medium">
+        <li><a href="#palvelut" class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">Palvelut</a></li>
+        <li><a href="#streamit" class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">Streamit &amp; some</a></li>
+        <li><a href="#omavaraisuus" class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">Omavaraisuus</a></li>
+        <li><a href="#yhteys" class="hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">Yhteystiedot</a></li>
       </ul>
-      <!-- end #nav -->
-
     </nav>
-    <!-- end #nav-wrap -->
-
-    <div class="row banner">
-      <div class="banner-text">
-        <h1 class="responsive-headline">Reino Pesonen</h1>
-        <h3>Olen Ylöjärvellä asuva <span>ohjelmistosuunnittelija</span>. <br>Opi lisää <a class="smoothscroll"
-            href="#about">minusta</a>.</h3>
-        <hr />
-        <ul class="social">
-          <li><a href="https://www.linkedin.com/in/reino-pesonen/"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="https://twitter.com/rebepoi"><i class="fa fa-twitter"></i></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="scrolldown">
-      <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-    </p>
-
   </header>
-  <!-- Header End -->
 
+  <!-- PÄÄSISÄLTÖ -->
+  <main id="main">
+    <!-- HERO / ETUSIVU -->
+    <section id="etusivu" class="relative overflow-hidden">
+      <!-- Hero background image — choose one below (credits and license notes below)
+           Recommendation 1 https://images.pexels.com/photos/3307194/pexels-photo-3307194.jpeg?auto=compress&cs=tinysrgb&w=1400&fit=crop&q=80
 
-  <!-- About Section
-   ================================================== -->
-  <section id="about">
+           Alternative 2 https://images.pexels.com/photos/3538659/pexels-photo-3538659.jpeg?auto=compress&cs=tinysrgb&w=1400&fit=crop&q=80
 
-    <div class="row">
+           Alternative 3 https://images.pexels.com/photos/1319823/pexels-photo-1319823.jpeg?auto=compress&cs=tinysrgb&w=1400&fit=crop&q=80
 
-      <div class="three columns">
+           License: Pexels images are free to use for personal and commercial use without attribution (credit appreciated). Unsplash images are also free under Unsplash License. If you prefer a different mood, change to alt URL above.
+      -->
+      <div
+        class="absolute inset-0 opacity-20"
+        aria-hidden="true"
+        style="background-image: url('https://images.pexels.com/photos/1319823/pexels-photo-1319823.jpeg?auto=compress&cs=tinysrgb&w=1400&fit=crop&q=80'); background-size: cover; background-position: center;"
+      ></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-brand/60 via-brand/80 to-brand" aria-hidden="true"></div>
 
-        <img class="profile-pic" src="images/profilepic.jpg" alt="" />
+      <div class="relative max-w-5xl mx-auto px-4 py-16 sm:py-24 grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-accent2 mb-3">
+            Platform engineer • DevOps • Streamaaja
+          </p>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+            Moi, olen Reino Pesonen
+          </h1>
+          <p class="text-base sm:text-lg text-slate-200 mb-6 max-w-xl">
+            Olen 1986 syntynyt perheenisä, platform engineer- ja DevOps-konsultti, sovelluskehittäjä sekä 
+            pelistreamaaja nimellä <strong>rebepoi</strong>. Teen sisältöä Twitchiin ja YouTubeen – pelejä, 
+            perheen seikkailuja, omavaraisuutta, tuotearvosteluja ja elämää kaupungin laitamilla kanojen, ankkojen ja 
+            kanien kanssa.
+          </p>
+          <p class="text-sm text-slate-300 mb-8 max-w-xl">
+            Tarjoan myös pienimuotoisesti viikonloppuisin <strong>opastettuja, humaanisti toteutettuja kanan lopetus- ja
+            lihan käsittelykursseja</strong> omavaraisuutta ja oman eläimen raakaruokintaa varten.
+          </p>
 
+          <div class="flex flex-wrap gap-3">
+            <a href="#yhteys"
+               class="inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-brand shadow-lg shadow-accent/30 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent focus-visible:ring-offset-brand transition">
+              Ota yhteyttä
+            </a>
+            <a href="https://www.twitch.tv/rebepoi"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center justify-center rounded-full border border-slate-500 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand transition">
+              Katso Twitch-streamit
+            </a>
+          </div>
+        </div>
+
+        <!-- Profiilikuva (tallenna reino.jpg samaan kansioon) -->
+        <div class="flex justify-center md:justify-end">
+          <figure class="relative max-w-xs w-full">
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-accent via-accent2 to-sky-500 opacity-60 blur-lg" aria-hidden="true"></div>
+            <div class="relative rounded-3xl bg-slate-900/80 border border-slate-700 overflow-hidden shadow-xl">
+              <img src="reino.jpg" alt="Reino Pesonen, Rebepoi Oy:n perustaja"
+                   class="w-full h-full object-cover" />
+            </div>
+            <figcaption class="mt-3 text-xs text-slate-300">
+              Reino Pesonen – Rebepoi Oy
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALVELUT -->
+    <section id="palvelut" class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+      <header class="mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-3">Palvelut &amp; osaaminen</h2>
+        <p class="text-slate-300 max-w-2xl">
+          Rebepoi Oy yhdistää modernin ohjelmistokehityksen, pilvivalmiin alustakokemuksen ja omavaraisuus- ja
+          eläinosaamisen. Kaikki palvelut ovat sovittavissa sähköpostilla tai puhelimitse.
+        </p>
+      </header>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col gap-3">
+          <h3 class="font-semibold text-lg">Platform engineer &amp; DevOps</h3>
+          <p class="text-sm text-slate-300">
+            Autan rakentamaan skaalautuvia ja ylläpidettäviä alustoja: CI/CD-putket, infrastruktuuri koodina,
+            kontit, monitorointi ja automaatio.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>DevOps-konsultointi ja sparraus</li>
+            <li>Modernisointi &amp; pilvisiirtymä</li>
+            <li>Platform-tiimin tuki ja koulutus</li>
+          </ul>
+          <p class="text-xs text-slate-400 mt-3">
+            DevOps- ja platform engineer -keikat kokonaan <strong>NorthCode Alpha Oy:n</strong> kautta.
+            Tutustu ja ota yhteyttä: <a href="https://northcode.fi" target="_blank" rel="noopener noreferrer" class="underline decoration-slate-500 hover:decoration-accent hover:text-accent">northcode.fi</a>.
+          </p>
+        </article>
+
+        <article class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col gap-3">
+          <h3 class="font-semibold text-lg">Sovelluskehitys</h3>
+          <p class="text-sm text-slate-300">
+            Kokemusta koko pinosta – backendistä frontend-ratkaisuihin. Keskityn selkeään arkkitehtuuriin,
+            automaattiseen testaukseen ja pitkän aikavälin ylläpidettävyyteen.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Protot ja MVP:t</li>
+            <li>Integraatiot ja automaatiot</li>
+            <li>Tekninen velka &amp; refaktorointi</li>
+          </ul>
+        </article>
+
+        <article class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col gap-3">
+          <h3 class="font-semibold text-lg">Opastettu kanan lopetus &amp; lihan käsittely</h3>
+          <p class="text-sm text-slate-300">
+            Pienimuotoinen, henkilökohtainen opastus oman kanan humaaniin lopetukseen sekä lihan
+            käsittelyyn omaan käyttöön – myös esim. koiran raakaruokintaan.
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Käydään läpi välineet ja turvallisuus</li>
+            <li>Humaani ja lainmukainen toiminta korostuu</li>
+            <li>Ei mitään kidutusjuttuja – pidätän oikeuden keskeyttää kurssin ja pitää maksun, jos rajat ylitetään</li>
+          </ul>
+          <p class="text-sm text-slate-200 mt-2">
+            <strong>Hinnoitteluesimerkki:</strong> peruskurssi <strong>200 € + 30 €/h</strong> + ALV 25&nbsp;% + matkakulut.
+            Hinnoittelu on tapauskohtaista kurssihinta ja tuntihinta voivat muuttua tilanteesta riippuen. Kaikki on neuvoteltavissa etukäteen.
+          </p>
+        </article>
       </div>
 
-      <div class="nine columns main-col">
+      <p class="mt-6 text-xs text-slate-400">
+        Huom. palvelujen ehdot, hinnat ja ALV-prosentit kannattaa kirjata tarkemmin sopimuksiin ja päivittää tähän tekstiin tarvittaessa.
+      </p>
+    </section>
 
-        <h2>Minä</h2>
+    <!-- STREAMIT & SOME -->
+    <section id="streamit" class="bg-slate-950/80 border-y border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+        <header class="mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3">Streamit &amp; sisältö</h2>
+          <p class="text-slate-300 max-w-2xl">
+            Streamaan pelejä Twitchiin ja julkaisen YouTubessa pelien lisäksi myös perhearkea, seikkailuja,
+            tuotearvosteluja, unboxingeja sekä videoita kanojen, ankkojen ja kanien hoidosta.
+          </p>
+        </header>
 
-        <p>Olen kolmekymppinen sovelluskehittäjä, vaikkakin helposti lähestyttävä ja sosiaalinen :). Parhaiten opin
-          kokeilemalla ja tekemällä, pidän haasteista siksi koen itse oppineeni eniten, kun saan tehtäväksi jotain mikä
-          menee ulos omalta mukavuusalueeltani.
-          Ehkä paras ominaisuuteni on tiedon löytäminen ja ongelman ratkaisu.</p>
-
-        <div class="row">
-
-          <div class="columns contact-details">
-
-            <h2>Yhteystiedot</h2>
-            <p class="address">
-              <span>Reino Pesonen</span><br>
-              <span>Valkamatie 10<br>
-                33450 Ylöjärvi
-              </span><br>
-              <span>+35844 042 4867</span><br>
-              <span>reino.pesonen(at)gmail.com</span>
-            </p>
-
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold mb-2">Twitch</h3>
+              <p class="text-sm text-slate-300 mb-4">
+                Livenä pelejä, chillailua ja välillä myös teknistä juttelua DevOps- ja infra-aiheista.
+              </p>
+            </div>
+            <a href="https://www.twitch.tv/rebepoi"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Avaa Rebepoi Twitch-kanava"
+               class="inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-brand hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition">
+              twitch.tv/rebepoi
+            </a>
           </div>
 
-        </div>
-        <!-- end row -->
-
-      </div>
-      <!-- end .main-col -->
-
-    </div>
-
-  </section>
-  <!-- About Section End-->
-
-
-  <!-- Resume Section
-   ================================================== -->
-  <section id="resume">
-
-    <!-- Education
-      ----------------------------------------------- -->
-    <div class="row education">
-
-      <div class="three columns header-col">
-        <h1><span>Koulutus</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Pieksämäen Kauppaoppilaitos</h3>
-            <p class="info">Tietojenkäsittelyn perustutkinto, datanomi</p>
-
-            <p>
-              Kauppiksessa sain hyvän peruspohjan sovelluskehitykseen ja vapaa-aika menikin lähes kokonaan
-              lisäopiskelussa. Opettajilta sain lisätehtäviä ja sain sitten suorittaa ylimääräisiä syventäviä kursseja
-              koulun ulkopuolella.
-            </p>
-
+          <div class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold mb-2">YouTube</h3>
+              <p class="text-sm text-slate-300 mb-4">
+                Pelivideoita, vlogit perheen kanssa, arkisia juttuja, tuotearvosteluja ja omavaraisuusaiheita.
+              </p>
+            </div>
+            <a href="https://www.youtube.com/@rebepoitv"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Avaa RebepoiTV YouTube-kanava"
+               class="inline-flex items-center justify-center rounded-full border border-slate-500 px-4 py-2 text-sm font-semibold text-slate-100 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition">
+              youtube.com/@rebepoitv
+            </a>
           </div>
 
+          <div class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5 flex flex-col justify-between">
+            <div>
+              <h3 class="font-semibold mb-2">Instagram</h3>
+              <p class="text-sm text-slate-300 mb-4">
+                Kuvia ja lyhyitä pätkiä arjesta, eläimistä ja projekteista – hyvää lisämaustetta striimien väliin.
+              </p>
+            </div>
+            <a href="https://www.instagram.com/rebepoi/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Avaa Rebepoi Instagram-tili"
+               class="inline-flex items-center justify-center rounded-full border border-slate-500 px-4 py-2 text-sm font-semibold text-slate-100 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition">
+              instagram.com/rebepoi
+            </a>
+          </div>
         </div>
-        <!-- item end -->
+      </div>
+    </section>
 
-        <div class="row item">
+    <!-- OMAVARAISUUS & SELVIYTYMINEN -->
+    <section id="omavaraisuus" class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+      <header class="mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-3">Omavaraisuus &amp; selviytyminen</h2>
+        <p class="text-slate-300 max-w-2xl">
+          Eläimet, omavaraisuus ja selviytymistaidot ovat iso osa arkea – kanojen, ankkojen ja kanien hoito
+          sekä lihan hyödyntäminen mahdollisimman kunnioittavalla tavalla. Lisäksi olen kiinnostunut
+          selviytymis- ja maanpuolustusjutuista ja käynyt MPK:n kursseja.
+        </p>
+      </header>
 
-          <div class="twelve columns">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5">
+          <h3 class="font-semibold mb-2">Humaani eläinkäsittely</h3>
+          <p class="text-sm text-slate-300 mb-3">
+            Eläimistä huolehtiminen ja niiden kunnioittava kohtelu on kaiken tekemisen pohja.
+            Jos opastan eläimen lopetuksessa, tärkeintä on:
+          </p>
+          <ul class="text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>selkeys, turvallisuus ja rauhallinen eteneminen</li>
+            <li>tarpeettoman kärsimyksen välttäminen</li>
+            <li>lain ja hyvän tavan mukaiset toimintatavat</li>
+          </ul>
+          <p class="text-xs text-slate-400 mt-3">
+            En suostu mihinkään kidutusta tai tarpeetonta vahingoittamista sisältävään toimintaan.
+            Pidän oikeuden keskeyttää tilanteen ja periä sovitun maksun, jos tilanne ei ole eläimen kannalta hyväksyttävä.
+          </p>
+        </article>
 
-            <h3>Peruskoulu</h3>
+        <article class="bg-slate-900/70 border border-slate-700 rounded-2xl p-5">
+          <h3 class="font-semibold mb-2">Selviytyminen &amp; maanpuolustus</h3>
+          <p class="text-sm text-slate-300 mb-3">
+            Omavaraisuus liittyy myös varautumiseen: mitä osaan, kun sähkö katkeaa tai logistiikka takkuaa?
+            Kiinnostukseni selviytymis- ja maanpuolustusteemoihin näkyy mm. MPK:n kursseihin osallistumisena.
+          </p>
+          <p class="text-sm text-slate-300">
+            En ole erikoisjoukkojen kouluttaja, mutta tykkään oppia ja jakaa käytännönläheisiä juttuja,
+            jotka auttavat selviämään arjessa ja poikkeustilanteissa hieman paremmin.
+          </p>
+        </article>
+      </div>
+    </section>
 
-            <p>
-              Peruskoulussa sain ensimmäisen kipinän sovelluskehitykseen. Kiitos uusien ATK-kurssien, missä pääsi
-              tekemään nettisivuja ;P
+    <!-- YHTEYSTIEDOT -->
+    <section id="yhteys" class="bg-slate-950/80 border-t border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 py-16 sm:py-20">
+        <header class="mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3">Yhteystiedot &amp; tarjouspyynnöt</h2>
+          <p class="text-slate-300 max-w-2xl">
+            Kiinnostuitko DevOps-sparrauksesta, sovelluskehityksestä tai omavaraisuus- ja kana-kursseista?
+            Laita viestiä tai soita, niin jutellaan lisää.
+          </p>
+        </header>
+
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start">
+          <!-- Yhteystietokortti -->
+          <div class="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 space-y-3">
+            <h3 class="font-semibold mb-1">Rebepoi Oy</h3>
+            <p class="text-sm text-slate-300">
+              Reino Pesonen – platform engineer, DevOps-konsultti, sovelluskehittäjä &amp; streamaaja.
             </p>
 
-          </div>
+            <dl class="mt-4 space-y-2 text-sm text-slate-200">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                <dt class="font-semibold min-w-[4rem]">Sähköposti</dt>
+                <dd>
+                  <!-- Email rakennetaan JS:llä charcodeista, HTML:ssä ei näy oikea osoite -->
+                  <a id="emailLink"
+                     class="underline decoration-slate-500 hover:decoration-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+                  </a>
+                  <noscript>
+                    <span class="block text-xs text-slate-400">
+                      (Sähköposti: kirjoita <strong>reino.pesonen (ät) gmail (piste) com</strong> käsin. JavaScript tarvitaan klikkauksen luomiseksi.)
+                    </span>
+                  </noscript>
+                </dd>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                <dt class="font-semibold min-w-[4rem]">Puhelin</dt>
+                <dd>
+                  <!-- Puhelinnumero rakennetaan JS:llä -->
+                  <a id="phoneLink"
+                     class="underline decoration-slate-500 hover:decoration-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+                  </a>
+                  <noscript>
+                    <span class="block text-xs text-slate-400">
+                      (Puhelin: +358 44 042 4867 – kopioi numero käsin. JavaScript tarvitaan klikkauksen luomiseksi.)
+                    </span>
+                  </noscript>
+                </dd>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                <dt class="font-semibold min-w-[4rem]">Saatavuus</dt>
+                <dd class="text-sm text-slate-300">
+                  Kurssit pääosin <strong>viikonloppuisin</strong> sopimuksen mukaan. Etäneuvonta ja
+                  muut hommat joustavasti.
+                </dd>
+              </div>
+            </dl>
 
-        </div>
-        <!-- item end -->
-
-      </div>
-      <!-- main-col end -->
-
-    </div>
-    <!-- End Education -->
-
-
-    <!-- Work
-      ----------------------------------------------- -->
-    <div class="row work">
-
-      <div class="three columns header-col">
-        <h1><span>Työt</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Eficode Oy</h3>
-            <p class="info">Konsultti / Ohjelmistokehittäjä <span>&bull;</span> <em class="date">2018 -
-                toistaiseksi</em></p>
-
-            <p>En ole vielä pitkään Efillä kerinnyt olemaan, mutta tarkoitus olisi kehittyä sovelluskehittäjänä eri
-              ohjelmistokielien ja alustojen kanssa, samalla päästä enemmän sisään devops-maailmaan mikä kiinostaa
-              itseäni todella paljon.</p>
-
-            <div class="project-margin">
-              <em class="project">Projektit</em>
-              <p class="info">HERE Technologies <span>&bull;</span> <em class="date">2/2018 - 10/2018</em></p>
-
-              <p class="project-info">Radio Map Admin Tool on yksi HERE Indoor Positioning -palvelun työkaluista, joka
-                kokoaa tietoja eri taustajärjestelmistä ja toimii siten sisäpaikannusratkaisun hallinnointityökaluna.
-                RMAT-työkalulla tarkastellaan, hallinnoidaan ja muokataan sisäpaikannukseen liittyvää dataa, esimerkiksi
-                radioverkkojen signaalinvoimakkuustietoja.</p>
+            <div class="mt-5 space-y-2">
+              <h4 class="text-sm font-semibold">DevOps- ja platform engineer -yhteydet</h4>
+              <p class="text-sm text-slate-300">
+                Jos etsit erityisesti DevOps- tai platform engineer -apua yrityksellesi, ota
+                yhteyttä <strong>NorthCode Alpha Oy:n</strong> kautta:
+              </p>
+              <a href="https://northcode.fi"
+                 target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center rounded-full border border-slate-500 px-4 py-2 text-xs font-semibold text-slate-100 hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition">
+                northcode.fi
+              </a>
             </div>
 
-          </div>
-
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Oscar Software Oy</h3>
-            <p class="info">Sovelluskehittäjä/palvelinvastaava. <span>&bull;</span> <em class="date">2015 - 2018</em>
+            <p class="text-xs text-slate-400 mt-4">
+              Muissa kysymyksissä (esim. kanan lopetus ja lihan käsittely, stream-yhteistyöt) ota suoraan yhteyttä yllä olevalla sähköpostilla tai puhelimella.
             </p>
-
-            <p>Toimin sovelluskehittäjänä, teknisenä tukena sekä palvelinvastaavana.</p>
-            <p>2016-vuoden loppupuolella, Oscar Software osti ProsperCart nimisen yrityksen liiketoiminnan ja sitä
-              kautta itsekkin päädyin Oscarille. Vastuuelueeni on pysynyt samana, vaikkakin kiirettä tuntuu nykyään
-              olevan enemmän.</p>
-            <p>Olen koodannut nykyiseen OscarProsper verkkokauppaan joitain uusia ominaisuuksia, tehnyt bugikorjausta ja
-              testausta. Olen asentanut hyvin monta verkkokauppaa ja olen myös teknisenä yhteyshenkilönä jos on kyse
-              palvelinvaatimuksista tai niihin
-              liittyvistä asetuksista.</p>
-            <p>Vastasin myös SVN -> Git siirtymästä, sen suunittelusta ja tuesta yrityksen sisällä.</p>
-
           </div>
 
+          
         </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Finposs systems Oy</h3>
-            <p class="info">Sovellusasiantuntija <span>&bull;</span> <em class="date">2014-2015</em></p>
-
-            <p>Javapohjaisten kassa/tankkausjärjestelmien tekninen sovellustuki.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Suomen e-tunnus Oy</h3>
-            <p class="info">Ohjelmistosuunnittelija <span>&bull;</span> <em class="date">2013-2014</em></p>
-
-            <p>Internetpohjaisen laskutuspalvelin suunittelu ja toteutus. Ohjelma kirjoitettiin PHP:llä CakePHP
-              frameworkkiä käyttäen ja sivuston yhteyteen integroitiin Visman Netvisor, niin että laskutustiedot
-              kulkevat suoraan taloushallinto-ohjelmaan.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Gigwhale.com</h3>
-            <p class="info">Ohjelmistosuunittelija <span>&bull;</span> <em class="date">2013 - toistaiseksi (projekti
-                jäissä)</em></p>
-
-            <p>Kaveriporukalla pystyyn laitettu startup, jota koodataan Ruby on Railsillä, joka nyt on osittain jäissä,
-              kun ei ole kennelläkään ylimääräistä aikaa tätä kehittää eteenpäin.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Acute Oy</h3>
-            <p class="info">Sovellusasiantuntija <span>&bull;</span> <em class="date">2012-2013</em></p>
-
-            <p>Internetpohjaisen potilastietojärjestelmän, sovellustuki ja koulutus, ohjelman käyttäjille. Ohjelma
-              käytössä useilla yksityisillä terveyspalveluyrityksellä sekä esim. fysioterapeuteilla.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>Fujitsu Finland Oy</h3>
-            <p class="info">Tekninen tuki <span>&bull;</span> <em class="date">2008-2012</em></p>
-
-            <p>Työskentelin potilastietojärjestelmien teknisenä tukena ja olin yhden asiakkuuden asiakasvastaavana.
-              Ennen lähtöäni toimin myös toisen asteen tukena, ns. second level, jonne laitettiin työt joita ei
-              ensimmäinen taso saanut/pystynyt ratkaisemaan.
-              Tässä työssä kehityin valtavasti tietokoneisiin liittyvissä ongelmanratkaisuissa ja nimelläni varmasti
-              löytyy paljon tehtyjä ohjeita seuraaville työntekijöille kyseisessä firmassa.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>SOL kiinteistöpalvelut</h3>
-            <p class="info">Kiinteistönhuoltaja <span>&bull;</span> <em class="date">2006 - 2008</em></p>
-
-            <p>Naimisiinmenon jälkeen, muutettiin Tampereelle ja aloin etsimään mitä tahansa työtä sitten tulikin
-              vastaan. Tälläinen paikka aukesi vuokrafirman kautta kahden viikon pestistä. Sainkin sitten ensimmäisen
-              vakipaikan tästä. Työ oli mukavaa ulkona
-              olemista ja käsillä tekemistä. Kuitenkin vapaajalla koodailin sivutoimisena yrittäjänä nettisivuja
-              yrityksille ja yksityisille henkilöille.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>It-maja</h3>
-            <p class="info">Tietokonehuolto ja kasaus <span>&bull;</span> <em class="date">2005</em></p>
-
-            <p>Tietokoneiden rakentelua ja korjausta.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
-        <div class="row item">
-
-          <div class="twelve columns">
-
-            <h3>YDCP (Youth with Disabilities Community Programme) Tanga Tansania, Afrikka</h3>
-            <p class="info">Harjoittelu koulusta <span>&bull;</span> <em class="date">2005</em></p>
-
-            <p>Kolmen kk harjoittelu koulusta, opetin liikuntarajoitteisia tietokoneiden käytössä ja tietoturvassa. Sekä
-              koodasin heille webbisivua. Ohjelma oli sellainen jolla koitettiin saada liikuntarajoitteisille sellaista
-              työtä mitä he pystyvät tekemään
-              rajoitteistaan huolimatta. Kaikki tapahtui englannin kielellä.</p>
-
-          </div>
-
-        </div>
-        <!-- item end -->
-
       </div>
-      <!-- main-col end -->
+    </section>
+  </main>
 
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-brand/95">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+      <p>&copy; <span id="year"></span> Rebepoi Oy – Reino Pesonen. Kaikki oikeudet pidätetään.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://www.twitch.tv/rebepoi" target="_blank" rel="noopener noreferrer"
+           class="underline decoration-slate-600 hover:decoration-accent hover:text-accent">
+          Twitch
+        </a>
+        <a href="https://www.youtube.com/@rebepoitv" target="_blank" rel="noopener noreferrer"
+           class="underline decoration-slate-600 hover:decoration-accent hover:text-accent">
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/rebepoi/" target="_blank" rel="noopener noreferrer"
+           class="underline decoration-slate-600 hover:decoration-accent hover:text-accent">
+          Instagram
+        </a>
+      </div>
     </div>
-    <!-- End Work -->
-
-
-    <!-- Skills
-      ----------------------------------------------- -->
-    <div class="row skill">
-
-      <div class="three columns header-col">
-        <h1><span>Kielitaito</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand suomi"></span><em>Suomi</em></li>
-            <li><span class='bar-points'>9 / 10</span><span class="bar-expand englanti"></span><em>Englanti</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand venaja"></span><em>Venäjä (kirjoitus 2 /
-                10)</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>Sovelluskehitus</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>HTML</em></li>
-            <li><span class='bar-points'>9 / 10</span><span class="bar-expand p90"></span><em>PHP</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand p80"></span><em>Vue.js</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand p80"></span><em>CSS</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand p80"></span><em>jQuery</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand p80"></span><em>JavaScript</em></li>
-            <li><span class='bar-points'>7 / 10</span><span class="bar-expand p70"></span><em>Python</em></li>
-            <li><span class='bar-points'>6 / 10</span><span class="bar-expand p60"></span><em>Node.js</em></li>
-            <li><span class='bar-points'>6 / 10</span><span class="bar-expand p60"></span><em>Ruby on Rails</em></li>
-            <li><span class='bar-points'>5 / 10</span><span class="bar-expand p50"></span><em>AJAX</em></li>
-            <li><span class='bar-points'>4 / 10</span><span class="bar-expand p40"></span><em>Visual Basic</em></li>
-            <li><span class='bar-points'>2 / 10</span><span class="bar-expand p20"></span><em>Java</em></li>
-            <li><span class='bar-points'>1 / 10</span><span class="bar-expand p10"></span><em>C++</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>Tietokannat</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>9 / 10</span><span class="bar-expand p90"></span><em>MySQL</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>DevOps</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>7 / 10</span><span class="bar-expand p70"></span><em>Docker and Docker
-                compose</em></li>
-            <li><span class='bar-points'>7 / 10</span><span class="bar-expand p70"></span><em>Terraform</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>Versionhallinta</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>GIT</em></li>
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>SVN</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>Palvelinpuoli</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>Linux (server)</em></li>
-            <li><span class='bar-points'>9 / 10</span><span class="bar-expand p90"></span><em>Apache</em></li>
-            <li><span class='bar-points'>5 / 10</span><span class="bar-expand p50"></span><em>Nginx</em></li>
-            <li><span class='bar-points'>5 / 10</span><span class="bar-expand p50"></span><em>Node.js</em></li>
-            <li><span class='bar-points'>4 / 10</span><span class="bar-expand p40"></span><em>Windows server</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-      <div class="three columns header-col">
-        <h1><span>Käyttöjärjestelmät</span></h1>
-      </div>
-
-      <div class="nine columns main-col">
-
-        <div class="bars">
-
-          <ul class="skills">
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>Linux (Desktop) <3< /em>
-            </li>
-            <li><span class='bar-points'>10 / 10</span><span class="bar-expand p100"></span><em>Windows</em></li>
-            <li><span class='bar-points'>8 / 10</span><span class="bar-expand p80"></span><em>MacOS</em></li>
-          </ul>
-
-        </div>
-        <!-- end skill-bars -->
-
-      </div>
-      <!-- main-col end -->
-
-    </div>
-    <!-- End skills -->
-
-  </section>
-  <!-- Resume Section End-->
-
-
-  <!-- Testimonials Section
-   ================================================== -->
-  <section id="testimonials">
-
-    <div class="text-container">
-
-      <div class="row">
-
-        <div class="two columns header-col">
-
-          <h1><span>Quotes</span></h1>
-
-        </div>
-
-        <div class="ten columns flex-container">
-
-          <div class="flexslider">
-
-            <ul class="slides">
-
-              <li>
-                <blockquote>
-                  <p>Most good programmers do programming not because they expect to get paid or get adulation by
-                    public, but because it is fun to program.</p>
-                  <cite>Linus Torvalds</cite>
-                </blockquote>
-              </li>
-              <!-- slide ends -->
-
-              <li>
-                <blockquote>
-                  <p>Some people, when confronted with a problem, think "I know, I'll use regular expressions."<br>Now
-                    they have two problems.</p>
-                  <cite>Jamie Zawinski</cite>
-                </blockquote>
-              </li>
-              <!-- slide ends -->
-
-            </ul>
-
-          </div>
-          <!-- div.flexslider ends -->
-
-        </div>
-        <!-- div.flex-container ends -->
-
-      </div>
-      <!-- row ends -->
-
-    </div>
-    <!-- text-container ends -->
-
-  </section>
-  <!-- Testimonials Section End-->
-
-  <!-- footer
-   ================================================== -->
-  <footer>
-
-    <div class="row">
-
-      <div class="twelve columns">
-
-        <ul class="social-links">
-          <li><a href="https://www.linkedin.com/in/reino-pesonen/"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="https://www.facebook.com/reino.pesonen.1"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://twitter.com/rebepoi"><i class="fa fa-twitter"></i></a></li>
-        </ul>
-
-        <ul class="copyright">
-          <li>&copy; Copyright
-            <script type="text/javascript">document.write(new Date().getFullYear());</script> Reino Pesonen
-          </li>
-          <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>
-        </ul>
-
-      </div>
-
-      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
-    </div>
-
   </footer>
-  <!-- Footer End-->
 
-  <!-- Java Script
-   ================================================== -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"><\/script>')
-  </script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.5.2.min.js" integrity="sha256-ocUeptHNod0gW2X1Z+ol3ONVAGWzIJXUmIs+4nUeDLI=" crossorigin="anonymous"></script>
-  <script src="js/jquery.flexslider.js"></script>
-  <script src="js/waypoints.js"></script>
-  <script src="js/jquery.fittext.js"></script>
-  <script src="js/magnific-popup.js"></script>
-  <script src="js/init.js"></script>
+  <!-- Takaisin ylös -nappi -->
+  <button id="backToTop"
+          type="button"
+          class="fixed bottom-5 right-5 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full bg-accent text-brand shadow-lg shadow-black/40 opacity-0 pointer-events-none translate-y-4 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent focus-visible:ring-offset-brand"
+          aria-label="Takaisin sivun alkuun">
+    ↑
+  </button>
 
+  <!-- Oma JS (vuosi, back-to-top, yhteystietojen “salaus”) -->
+  <script src="main.js"></script>
 </body>
-
 </html>

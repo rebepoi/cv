@@ -1,0 +1,7 @@
+/* Yksinkertainen oma CSS.
+   Tailwind hoitaa varsinaisen layoutin ja värit. */
+
+html {
+  /* Pehmeät siirtymät ankkurilinkeille ja takaisin ylös -napille */
+  scroll-behavior: smooth;
+}
