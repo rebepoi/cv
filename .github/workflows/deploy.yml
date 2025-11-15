@@ -14,5 +14,15 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /var/www/${{ secrets.HOST }}/html
-          git pull origin master
+          TARGET="/var/www/${{ secrets.HOST }}/html"
+          REPO="https://github.com/rebepoi/cv.git"
+          BRANCH="master"
+
+          if [ -d "$TARGET/.git" ]; then
+            git -C "$TARGET" fetch --all
+            git -C "$TARGET" reset --hard "origin/$BRANCH"
+          else
+            rm -rf "$TARGET"
+            mkdir -p "$(dirname "$TARGET")"
+            git clone --depth 1 --branch "$BRANCH" "$REPO" "$TARGET"
+          fi
