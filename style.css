@@ -4,4 +4,11 @@
 html {
   /* Pehmeät siirtymät ankkurilinkeille ja takaisin ylös -napille */
   scroll-behavior: smooth;
+  /* Pakotetaan tumma teema aina */
+  color-scheme: dark;
+}
+
+/* Varmistetaan että sivu on aina tumma teemassa */
+:root {
+  color-scheme: dark;
 }
